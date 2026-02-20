@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jucrypt"
+version = "0.1.0"
+description = "JuCrypt is an experimental symmetric cipher where the encryption key is a piece of text you write — a story, a sentence, a memory. The longer and more unique your story, the stronger your encryption. (Experimental)"
+authors = [
+    {name = "I., Nabil", email = "w3nabil@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICEN[CS]E"]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Topic :: Security :: Cryptography",
+    "Programming Language :: Python :: 3",
+]
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["jucrypt*"]
