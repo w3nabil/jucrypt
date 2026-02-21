@@ -1,18 +1,27 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "jucrypt"
-version = "0.1.0"
-description = "JuCrypt is an experimental symmetric cipher where the encryption key is a piece of text you write — a story, a sentence, a memory. The longer and more unique your story, the stronger your encryption. (Experimental)"
-authors = [
-    {name = "I., Nabil", email = "w3nabil@gmail.com"}
-]
-readme = "README.md"
+version = "0.2.0"
+description = "Experimental symmetric cipher using user-provided narrative text as key material."
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.9"
+
+authors = [
+    { name = "I. Nabil", email = "w3nabil@gmail.com" }
+]
+
 license = "Apache-2.0"
-license-files = ["LICEN[CS]E"]
+
+keywords = [
+    "cryptography",
+    "symmetric encryption",
+    "educational crypto",
+    "experimental cipher",
+    "story-based key derivation"
+]
 
 classifiers = [
     "Development Status :: 3 - Alpha",
@@ -20,8 +29,23 @@ classifiers = [
     "Intended Audience :: Education",
     "Topic :: Security :: Cryptography",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent"
 ]
 
+dependencies = []
+
+[project.optional-dependencies]
+experiment = [
+    "numpy>=1.23"
+]
+
+[project.urls]
+Homepage = "https://github.com/w3nabil/jucrypt"
+Repository = "https://github.com/w3nabil/jucrypt"
+Issues = "https://github.com/w3nabil/jucrypt/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
