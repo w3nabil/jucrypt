@@ -1,13 +1,13 @@
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.build_meta"
+build-backend = "setuptools.build_meta:__legacy__"
 
 [project]
 name = "jucrypt"
-version = "0.2.0"
-description = "Experimental symmetric cipher using user-provided narrative text as key material."
+version = "0.4.0"
+description = "The parent dir of STORY, MUCRYPT, RESIMAGE and many more..."
 readme = { file = "README.md", content-type = "text/markdown" }
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 
 authors = [
     { name = "I. Nabil", email = "w3nabil@gmail.com" }
@@ -38,15 +38,27 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
-experiment = [
-    "numpy>=1.23"
-]
+experiment = ["numpy>=1.23", "scipy>=1.17.1"]
+dev = ["pytest"]
+
+[project.scripts]
+story = "jucrypt.storyc:main"
 
 [project.urls]
 Homepage = "https://github.com/w3nabil/jucrypt"
 Repository = "https://github.com/w3nabil/jucrypt"
 Issues = "https://github.com/w3nabil/jucrypt/issues"
+Changelog = "https://github.com/w3nabil/jucrypt/changelog.md"
+
+[tool.setuptools]
 
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["jucrypt*"]
+
+[tool.pytest.ini_options]
+testpaths      = ["tests"]
+python_files   = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts        = "-v --tb=short"
